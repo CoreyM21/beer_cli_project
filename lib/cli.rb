@@ -16,7 +16,7 @@ class CLI
                 puts ""
                 prompt_fun_word                
             elsif input == 'list'   
-                print_beers_list(beer)
+                print_beers_list(Beer.find_by_name(@fun_word))
                 puts ""
             elsif input.to_i > 0 && input.to_i <= Beer.find_by_name(@fun_word).length
                 beer = Beer.find_by_name(@fun_word)[input.to_i - 1]
@@ -76,6 +76,8 @@ class CLI
     end
 
 end
+
+# iterate over collection and see if it was created.
 
 # prompt for list keeps failing
 # how do I get a new list when I ask new word
